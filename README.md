@@ -4,9 +4,6 @@
 
 <p align="center"> 
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=0e75b6&style=plastic" alt="suresh-3x" /> 
-	<a href = "https://commits.top/india.html" target="_blank">
-		<img src="https://enfsgag3ayy6w9q.m.pipedream.net/&style=plastic" alt="" target="_blank"/> 
-	</a>
 </p>
 
 
