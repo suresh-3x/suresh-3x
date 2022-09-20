@@ -1,14 +1,11 @@
 <h1 align="center">Hi , I'm Suresh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
-<p align="center">
-  <a href="https://github.com/suresh-3x/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Computer+Science+Student;Competitive+Programmer;ACPC+2021+Finalist;DS%20|%20Algorithms%20|%20OOP%20;Specialist%20on%20Codeforces;Division%202%20on%20Codechef%20(3%20Stars);6%20Kyu%20on%20Atcoder;Always%20learning%20new%20things&center=true&width=500&height=50"></a>
-</p>
-
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Experienced+Software+Engineer+with+a+demonstrated+history+of+working+in+the+education+management+industry.+Skilled+in+Python+(Programming+Language)%2C+Analytical+Skills%2C+Computer+Science%2C+API+Development%2C+and+Application+Programming+Interfaces.+Strong+engineering+professional+with+a+BCA+focused+in+Computer+Programming%2C+Specific+Applications+from+KPB+Hinduja+College+of+Commerce.+" alt="Typing SVG" /></a>
 
 <br>
 
 <p align="center"> 
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=0e75b6&style=plastic" alt="suresh-3x" /> 
-	<a href = "https://commits.top/egypt.html" target="_blank">
+	<a href = "https://commits.top/india.html" target="_blank">
 		<img src="https://enfsgag3ayy6w9q.m.pipedream.net/&style=plastic" alt="" target="_blank"/> 
 	</a>
 </p>
@@ -148,4 +145,3 @@
 
 <p align="center"> <a href="https://github.com/suresh-3x/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=suresh-3x&layout=compact&theme=algolia" alt="" /></a> </p>
 
------g
