@@ -7,7 +7,7 @@
 <br>
 
 <p align="center"> 
-	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=0e75b6&style=plastic" alt="7oSkaaa" /> 
+	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=0e75b6&style=plastic" alt="suresh-3x" /> 
 	<a href = "https://commits.top/egypt.html" target="_blank">
 		<img src="https://enfsgag3ayy6w9q.m.pipedream.net/&style=plastic" alt="" target="_blank"/> 
 	</a>
@@ -24,7 +24,7 @@
 <br>
 
 ## 🔥 Streak Stats
-<p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=7oSkaaa&theme=algolia" alt="7oSkaaa" /></p>
+<p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=suresh-3x&theme=algolia" alt="suresh-3x" /></p>
 
 <br>
 <br>
@@ -85,7 +85,7 @@
   &emsp;
     <a href="#"><img alt="Geekf For Geeks" src="https://img.shields.io/badge/geeksforgeeks-%230F9D58.svg?style=plastic&logo=geeksforgeeks&logoColor=white"></a>
   &emsp;
-    <a href="#"><img alt="JSON" img src="https://img.shields.io/badge/json-%23000000.svg?style=plastic&logo=json&logoColor=white"></a>
+    <a href="#"><img alt="JSON" img src="https://img.shields.io/badge/json-%23000000.sv?style=plastic&logo=json&logoColor=white"></a>
   &emsp;
     <a href="#"><img alt="OpenGL" src="https://img.shields.io/badge/opengl-%235586A4.svg?style=plastic&logo=opengl&logoColor=white"></a>
   &emsp;
@@ -126,10 +126,10 @@
   <summary><b>💻 GitHub Profile Stats</b></summary>
   <br/>
   <p align="center">
-    <a href="https://github.com/suresh-3x/github-readme-stats"><img alt="7oSkaaa's Github Stats" src="https://github-readme-stats.vercel.app/api?username=suresh-3x&show_icons=true&count_private=true&theme=algolia" height="192px"/></a>
+    <a href="https://github.com/suresh-3x/github-readme-stats"><img alt="suresh-3x's Github Stats" src="https://github-readme-stats.vercel.app/api?username=suresh-3x&show_icons=true&count_private=true&theme=algolia" height="192px"/></a>
 <br/>
   &nbsp;
-	  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=suresh-3x&langs_count=10&show_icons=true&locale=en&layout=compact&theme=algolia" alt="7oSkaaa" height="192px"/>
+	  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=suresh-3x&langs_count=10&show_icons=true&locale=en&layout=compact&theme=algolia" alt="suresh-3x" height="192px"/>
   <br/>
   <b>Note:</b> Top languages is only a metric of the languages my public code consists of and doesn't reflect experience or skill level.
   </p>
@@ -138,7 +138,7 @@
 
   <summary><b>⚡ Recent GitHub Activity</b></summary>
   <br/>
-   <a href="https://github.com/suresh-3x"><img alt="7oSkaaa's Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=suresh-3x&custom_title=7oSkaaa's%20Contribution%20Graph&theme=react-dark" /></a>
+   <a href="https://github.com/suresh-3x"><img alt="suresh-3x's Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=suresh-3x&custom_title=suresh-3x's%20Contribution%20Graph&theme=react-dark" /></a>
   <br/>
 
 
@@ -148,4 +148,4 @@
 
 <p align="center"> <a href="https://github.com/suresh-3x/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=suresh-3x&layout=compact&theme=algolia" alt="" /></a> </p>
 
------
+-----g
