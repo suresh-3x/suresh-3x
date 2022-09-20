@@ -1,5 +1,4 @@
 <h1 align="center">Hi , I'm Suresh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Experienced+Software+Engineer+with+a+demonstrated+history+of+working+in+the+education+management+industry.+Skilled+in+Python+(Programming+Language)%2C+Analytical+Skills%2C+Computer+Science%2C+API+Development%2C+and+Application+Programming+Interfaces.+Strong+engineering+professional+with+a+BCA+focused+in+Computer+Programming%2C+Specific+Applications+from+KPB+Hinduja+College+of+Commerce.+" alt="Typing SVG" /></a>
 
 <br>
 
