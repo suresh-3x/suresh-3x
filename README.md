@@ -119,7 +119,8 @@
   <summary><b>💻 GitHub Profile Stats</b></summary>
   <br/>
   <p align="center">
-    <a href="https://github.com/suresh-3x/github-readme-stats"><img alt="suresh-3x's Github Stats" src="https://github-readme-stats.vercel.app/api?username=suresh-3x&show_icons=true&count_private=true&theme=algolia" height="192px"/></a>
+  
+    <a href="https://github.com/suresh-3x"><img alt="suresh-3x's Github Stats" src="https://github-readme-stats.vercel.app/api?username=suresh-3x&show_icons=true&count_private=true&theme=algolia" height="192px"/></a>
 <br/>
   &nbsp;
 	  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=suresh-3x&langs_count=10&show_icons=true&locale=en&layout=compact&theme=algolia" alt="suresh-3x" height="192px"/>
