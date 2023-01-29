@@ -130,13 +130,6 @@
   </p>
 
 ----
-
-  <summary><b>⚡ Recent GitHub Activity</b></summary>
-  <br/>
-   <a href="https://github.com/suresh-3x"><img alt="suresh-3x's Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=suresh-3x&custom_title=suresh-3x's%20Contribution%20Graph&theme=react-dark" /></a>
-  <br/>
-
-
 <br/>
 
 ## :trophy: Git profile Trophies
