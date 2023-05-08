@@ -3,15 +3,15 @@
 <br>
 
 <p align="center"> 
-	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=0e75b6&style=plastic" alt="suresh-3x" /> 
+	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="suresh-3x" /> 
 </p>
 
 
 ## :sassy_man:  About me
-- 🧑‍💼: I am a `Senior Software Development Engineer` at Stride Ahead.
+- 🧑‍💼: I am a `System Engineer` at Stride Ahead.
 - :technologist: I love using Software as a solution for every `Problem`
 - :student: I’m currently learning: `Computer Science` and `Software Engineering`.
-- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://www.dropbox.com/s/24n7keb8u6feov0/Software%20Engineer%20Resume.pdf?dl=0)).
+- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://www.linkedin.com/in/suresh-3x/)).
 - :nerd_face: Always `learning new things`
 
 <br>
