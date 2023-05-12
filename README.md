@@ -8,7 +8,7 @@
 
 
 ## :sassy_man:  About me
-- 🧑‍💼: I am a `System Engineer` at Stride Ahead.
+- 🧑‍💼: I am a `System Engineer` at Gridlogic.
 - :technologist: I love using Software as a solution for every `Problem`
 - :student: I’m currently learning: `Computer Science` and `Software Engineering`.
 - :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://www.linkedin.com/in/suresh-3x/)).
