@@ -11,7 +11,7 @@
 - 🧑‍💼: I am a `System Engineer` at Gridlogic.
 - :technologist: I love using Software as a solution for every `Problem`
 - :student: I’m currently learning: `Computer Science` and `Software Engineering`.
-- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://www.linkedin.com/in/suresh-3x/)).
+- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://drive.google.com/file/d/12ErQTtmgO7Oon_NYUmFn9uBM2MA8WSyp/view?usp=sharing)).
 - :nerd_face: Always `learning new things`
 
 <br>
