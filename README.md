@@ -104,7 +104,7 @@
 
 
 
-  <summary><b>💻 GitHub Profile Stats</b></summary>
+  <summary><b>💻 Stats</b></summary>
   <br/>
   <p align="center">
   
@@ -120,7 +120,7 @@
 ----
 <br/>
 
-## :trophy: Git profile Trophies
+## :trophy: Trophies
 
 <p align="center"> <a href="https://github.com/suresh-3x/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=suresh-3x&layout=compact&theme=algolia" alt="" /></a> </p>
 
