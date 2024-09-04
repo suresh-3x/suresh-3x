@@ -11,7 +11,7 @@
 - 🧑‍💼: I am a `System Engineer` at Gridlogic.
 - :technologist: I love using Software as a solution for every `Problem`
 - :student: I’m currently learning: `Computer Science` and `Software Engineering`.
-- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://lavender-kaitlynn-84.tiiny.site)).
+- :thinking: I’m currently open for: `job opportunity`, this is [MY RESUME](https://lavender-kaitlynn-84.tiiny.site).
 - :nerd_face: Always `learning new things`
 
 <br>
