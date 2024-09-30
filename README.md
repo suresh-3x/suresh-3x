@@ -1,17 +1,14 @@
 <h1 align="center">Hi , I'm Suresh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
+<a href="https://portfolio-sigma-ten-75.vercel.app" 
+style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+View My Portfolio
+</a>
 
 <br>
 
 <p align="center"> 
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="suresh-3x" /> 
 </p>
-
-<div style="text-align: center; margin-top: 20px;">
-  <a href="https://portfolio-sigma-ten-75.vercel.app" 
-     style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; border-radius: 5px;">
-    View My Portfolio
-  </a>
-</div>
 
 ## :sassy_man:  About me
 - 🧑‍💼: I am a `System Engineer` at Gridlogic.
