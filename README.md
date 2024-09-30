@@ -2,7 +2,9 @@
 Hi , I'm Suresh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35">
 </h1>
 <br>
-[View My Portfolio](https://portfolio-sigma-ten-75.vercel.app))
+<p align="center">
+  <a href="https://portfolio-sigma-ten-75.vercel.app">View My Portfolio</a>
+</p>
 <p align="center"> 
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="suresh-3x" /> 
 </p>
