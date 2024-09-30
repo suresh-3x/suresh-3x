@@ -6,6 +6,12 @@
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="suresh-3x" /> 
 </p>
 
+<div style="text-align: center; margin-top: 20px;">
+  <a href="#portfolio-section" 
+     style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+    View My Portfolio
+  </a>
+</div>
 
 ## :sassy_man:  About me
 - 🧑‍💼: I am a `System Engineer` at Gridlogic.
