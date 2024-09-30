@@ -7,7 +7,7 @@
 </p>
 
 <div style="text-align: center; margin-top: 20px;">
-  <a href="#portfolio-section" 
+  <a href="https://portfolio-sigma-ten-75.vercel.app" 
      style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; border-radius: 5px;">
     View My Portfolio
   </a>
