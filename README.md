@@ -3,10 +3,10 @@ Hi , I'm Suresh <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy
 </h1>
 <br>
 <p align="center">
-  <a href="https://portfolio-sigma-ten-75.vercel.app">
+  <a href="https://www.sureshbhandari.com?ref=github">
 	<img width="1453" alt="image" src="https://github.com/user-attachments/assets/01cbc5ba-c552-4c9c-a610-14021d4d10ab">
   </a>
-  <a href="https://portfolio-sigma-ten-75.vercel.app">View My Portfolio</a>
+  <a href="https://www.sureshbhandari.com?ref=github">View My Portfolio</a>
 </p>
 <p align="center"> 
 	<img src="https://komarev.com/ghpvc/?username=suresh-3x&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="suresh-3x" /> 
