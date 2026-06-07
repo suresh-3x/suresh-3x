@@ -101,10 +101,17 @@ Shipped four production web apps solo (Next.js, Node.js, MongoDB) with zero post
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=suresh-3x&show_icons=true&hide_border=true" alt="Suresh's GitHub stats" />
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api?username=suresh-3x&show_icons=true&hide_border=true"
+    alt="Suresh's GitHub stats"
+  />
 </p>
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=suresh-3x&layout=compact&hide_border=true" alt="Top languages" />
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=suresh-3x&layout=compact&hide_border=true"
+    alt="Top languages"
+  />
 </p>
 
 ---
