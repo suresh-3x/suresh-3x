@@ -71,7 +71,15 @@ the client shared) replaced the placeholders in `site/lib/content.ts`:
   leads now route through the on-page enquiry form. Footer/Enquire/Privacy updated accordingly.
 - Added a **Mayfair Housing credibility strip** (60+ yrs · 100+ projects · 1 Cr+ sq.ft · 10,000+ families).
 - Replaced the unverifiable tower numbers (35 storeys / 1.75 acres) with confirmed facts.
-- ⚠️ Unit **photos are still interim stock** — swap for real Mayfair renders before go-live.
+- **Real renders** (2026-06-08) — replaced the interim Unsplash stock with the **actual
+  Mayfair Coral project renders** pulled from the official site codenamecoral.com (Coral Bay
+  Pool, deck-residence balcony, exterior/interior renders, Breeze Cafe, and the real location
+  map). 8 local files in `site/public/gallery/`; stock removed. content.ts comments updated.
+- **Deploy config fix** (2026-06-08) — the git-connected Vercel project had **Root Directory
+  `.`**, so every push produced a failed Preview build (app is in `site/`). Fixed: set the
+  project **Root Directory = `site`**, moved the `.vercel` link to the folder root, added a
+  repo-root `.vercelignore`, and now deploy with `vercel --prod` **from the folder root**.
+  Pushes now build successfully.
 
 **Smooth / interactive / immersive (new `site/components/ui/`):**
 - **Scroll-driven reef camera** — the hero 3D camera ascends + dollies back as you scroll
@@ -96,4 +104,8 @@ the client shared) replaced the placeholders in `site/lib/content.ts`:
 | `REVAMP_PROMPT.md` | The brief the site was generated from |
 
 ## Deploy
-From `site/`: `vercel --prod` (Vercel project `codename-coral`, deployment protection disabled so all generated URLs are public). Repo root is this folder; the app is in `site/`, so the Vercel project's **root directory is `site`** (CLI deploys run from `site/`).
+From the **folder root** (this folder, where `.vercel` now lives): `vercel --prod`
+— Vercel project `codename-coral`, **Root Directory = `site`**, deployment protection
+disabled so all generated URLs are public. A repo-root `.vercelignore` keeps the upload
+lean. Build first with `cd site && npm run build`. Because the project is git-connected,
+`git push` of the branch also builds successfully (Root Directory = `site`).

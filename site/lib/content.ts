@@ -5,7 +5,8 @@
  * Project facts below are taken from the official landing page (codenamecoral.com)
  * and the MahaRERA listing. The official site publishes no phone/email — leads are
  * captured through the on-page enquiry form — so `phone`/`email` are null.
- * Unit renders/photos are still interim stock (see image notes); swap before go-live.
+ * Imagery is the real Mayfair Coral project renders, pulled from the official
+ * landing page (codenamecoral.com) and stored locally in /public/gallery.
  */
 
 export const site = {
@@ -72,10 +73,7 @@ export type Residence = {
   highlights: string[];
   carpet: string; // placeholder
   price: string; // placeholder
-  /**
-   * INTERIM royalty-free stock image (Unsplash License). Local copy in /public.
-   * TODO: replace with real Mayfair Housing residence renders before go-live.
-   */
+  /** Real Mayfair Coral interior render (from codenamecoral.com), local in /public/gallery. */
   image: string;
   tone: string; // gradient fallback behind the image
 };
@@ -89,7 +87,7 @@ export const residences: Residence[] = [
     highlights: ["Private sun deck", "Cross-ventilated layout", "Premium fittings"],
     carpet: "645–689 sq.ft.",
     price: "₹1.34 Cr* onwards",
-    image: "/gallery/deck-residence-living.jpg",
+    image: "/gallery/interior-2.jpg",
     tone: "from-ocean-400 to-ocean-700",
   },
   {
@@ -100,7 +98,7 @@ export const residences: Residence[] = [
     highlights: ["Extended deck", "Master with walk-in", "Sky-framed views"],
     carpet: "946–1235 sq.ft.",
     price: "Price on request",
-    image: "/gallery/apartment-interior.jpg",
+    image: "/gallery/interior-living.jpg",
     tone: "from-coral-300 to-coral-500",
   },
 ];
@@ -156,9 +154,8 @@ export const location = {
   title: "Rooted in Mira Road East. Connected to everywhere.",
   address: "MTNL Road, near Jangid Circle, Mira Road East, Mumbai.",
   body: "A 5–15 minute social ecosystem of schools, hospitals and shopping, woven into Mumbai's fastest-growing infrastructure corridor.",
-  // INTERIM royalty-free aerial (Unsplash License). Local copy in /public.
-  // TODO: replace with an embedded interactive map / real site aerial before go-live.
-  image: "/gallery/aerial-coastline.jpg",
+  // Real Mayfair Coral location map (from codenamecoral.com), local in /public/gallery.
+  image: "/gallery/location-map.jpg",
   connectivity: [
     { name: "Metro Line 9", detail: "Sai Baba Nagar & Kashigaon stations", time: "Nearby" },
     { name: "Mira Road Railway", detail: "Western Line connectivity", time: "Minutes away" },
@@ -172,10 +169,7 @@ export const location = {
 export type GalleryItem = {
   title: string;
   tone: string; // gradient fallback color behind the image
-  /**
-   * INTERIM royalty-free stock image (Unsplash License). Local copy in /public/gallery.
-   * TODO: replace with real Mayfair Housing renders before go-live.
-   */
+  /** Real Mayfair Coral render (from codenamecoral.com), local in /public/gallery. */
   image: string;
 };
 
@@ -183,31 +177,31 @@ export const gallery: GalleryItem[] = [
   {
     title: "Tropical Arrival Court",
     tone: "from-ocean-700 to-ocean-900",
-    image: "/gallery/arrival-court.jpg",
+    image: "/gallery/exterior-1.jpg",
   },
   {
     title: "Infinity Pool Deck",
     tone: "from-ocean-400 to-ocean-700",
-    image: "/gallery/infinity-pool.jpg",
+    image: "/gallery/pool.jpg",
   },
   {
     title: "Deck Residence Living",
     tone: "from-sand-300 to-sand-500",
-    image: "/gallery/deck-residence-living.jpg",
+    image: "/gallery/interior-living.jpg",
   },
   {
     title: "Landscaped Podium",
     tone: "from-ocean-300 to-coral-300",
-    image: "/gallery/landscaped-podium.jpg",
+    image: "/gallery/exterior-2.jpg",
   },
   {
     title: "Clubhouse Lounge",
     tone: "from-sand-200 to-coral-200",
-    image: "/gallery/clubhouse-lounge.jpg",
+    image: "/gallery/cafe.jpg",
   },
   {
     title: "Skyline at Golden Hour",
     tone: "from-coral-300 to-coral-500",
-    image: "/gallery/skyline-golden-hour.jpg",
+    image: "/gallery/exterior-3.jpg",
   },
 ];

@@ -3,3 +3,5 @@
 *.pem
 *.log
 .playwright-mcp/
+# Vercel link now lives at the repo root (deploys run from here; root dir = "site").
+.vercel
