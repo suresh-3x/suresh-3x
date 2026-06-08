@@ -53,27 +53,24 @@ export function CoralCanvas({ lowPower = false }: { lowPower?: boolean }) {
     <div ref={wrap} className="absolute inset-0" aria-hidden="true">
       <Canvas
         frameloop={active ? "always" : "demand"}
-        dpr={[1, lowPower ? 1.25 : 2]}
-        shadows={!lowPower}
+        dpr={[1, lowPower ? 1 : 1.5]}
         camera={{ position: [0, 0.2, 4.6], fov: 42 }}
         gl={{ antialias: true, powerPreference: "high-performance", alpha: true }}
       >
+        {/* Shadows intentionally OFF: a directional shadow map recomputed each
+            frame on the rotating coral caused jank + shadow-acne flicker. The
+            scene reads well on lighting + bloom alone. */}
         <color attach="background" args={["#06181d"]} />
         <fog attach="fog" args={["#06181d", 5, 13]} />
 
-        <ambientLight intensity={0.35} color="#73ccd3" />
-        <directionalLight
-          position={[4, 6, 5]}
-          intensity={2.2}
-          color="#ffd9c9"
-          castShadow={!lowPower}
-        />
+        <ambientLight intensity={0.4} color="#73ccd3" />
+        <directionalLight position={[4, 6, 5]} intensity={2.2} color="#ffd9c9" />
         <pointLight position={[-4, -2, -3]} intensity={6} color="#1f8c99" />
         <pointLight position={[0, 3, 2]} intensity={3} color="#ff6f61" />
 
         <Suspense fallback={null}>
           <Coral />
-          <Particles count={lowPower ? 250 : 600} />
+          <Particles count={lowPower ? 140 : 320} />
         </Suspense>
 
         <Rig lowPower={lowPower} />
@@ -81,8 +78,8 @@ export function CoralCanvas({ lowPower = false }: { lowPower?: boolean }) {
         {!lowPower && (
           <EffectComposer>
             <Bloom
-              intensity={0.7}
-              luminanceThreshold={0.35}
+              intensity={0.55}
+              luminanceThreshold={0.5}
               luminanceSmoothing={0.9}
               mipmapBlur
             />
