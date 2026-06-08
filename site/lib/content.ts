@@ -52,6 +52,12 @@ export type Residence = {
   highlights: string[];
   carpet: string; // placeholder
   price: string; // placeholder
+  /**
+   * INTERIM royalty-free stock image (Unsplash License). Local copy in /public.
+   * TODO: replace with real Mayfair Housing residence renders before go-live.
+   */
+  image: string;
+  tone: string; // gradient fallback behind the image
 };
 
 export const residences: Residence[] = [
@@ -63,6 +69,8 @@ export const residences: Residence[] = [
     highlights: ["Private sun deck", "Cross-ventilated layout", "Premium fittings"],
     carpet: "{{2BHK_CARPET}} sq.ft.", // TODO: confirm
     price: "On request", // TODO: confirm
+    image: "/gallery/deck-residence-living.jpg",
+    tone: "from-ocean-400 to-ocean-700",
   },
   {
     type: "3 BHK",
@@ -72,6 +80,8 @@ export const residences: Residence[] = [
     highlights: ["Extended deck", "Master with walk-in", "Sky-framed views"],
     carpet: "{{3BHK_CARPET}} sq.ft.", // TODO: confirm
     price: "On request", // TODO: confirm
+    image: "/gallery/apartment-interior.jpg",
+    tone: "from-coral-300 to-coral-500",
   },
 ];
 
@@ -126,6 +136,9 @@ export const location = {
   title: "Rooted in Mira Road East. Connected to everywhere.",
   address: "MTNL Road, near Jangid Circle, Mira Road East, Mumbai.",
   body: "A 5–15 minute social ecosystem of schools, hospitals and shopping, woven into Mumbai's fastest-growing infrastructure corridor.",
+  // INTERIM royalty-free aerial (Unsplash License). Local copy in /public.
+  // TODO: replace with an embedded interactive map / real site aerial before go-live.
+  image: "/gallery/aerial-coastline.jpg",
   connectivity: [
     { name: "Metro Line 9", detail: "Sai Baba Nagar & Kashigaon stations", time: "Nearby" },
     { name: "Mira Road Railway", detail: "Western Line connectivity", time: "Minutes away" },
@@ -136,11 +149,45 @@ export const location = {
   ] as Connectivity[],
 };
 
-export const gallery = [
-  { title: "Tropical Arrival Court", tone: "from-ocean-700 to-ocean-900" },
-  { title: "Infinity Pool Deck", tone: "from-ocean-400 to-ocean-700" },
-  { title: "Deck Residence Living", tone: "from-sand-300 to-sand-500" },
-  { title: "Landscaped Podium", tone: "from-ocean-300 to-coral-300" },
-  { title: "Clubhouse Lounge", tone: "from-sand-200 to-coral-200" },
-  { title: "Skyline at Golden Hour", tone: "from-coral-300 to-coral-500" },
+export type GalleryItem = {
+  title: string;
+  tone: string; // gradient fallback color behind the image
+  /**
+   * INTERIM royalty-free stock image (Unsplash License). Local copy in /public/gallery.
+   * TODO: replace with real Mayfair Housing renders before go-live.
+   */
+  image: string;
+};
+
+export const gallery: GalleryItem[] = [
+  {
+    title: "Tropical Arrival Court",
+    tone: "from-ocean-700 to-ocean-900",
+    image: "/gallery/arrival-court.jpg",
+  },
+  {
+    title: "Infinity Pool Deck",
+    tone: "from-ocean-400 to-ocean-700",
+    image: "/gallery/infinity-pool.jpg",
+  },
+  {
+    title: "Deck Residence Living",
+    tone: "from-sand-300 to-sand-500",
+    image: "/gallery/deck-residence-living.jpg",
+  },
+  {
+    title: "Landscaped Podium",
+    tone: "from-ocean-300 to-coral-300",
+    image: "/gallery/landscaped-podium.jpg",
+  },
+  {
+    title: "Clubhouse Lounge",
+    tone: "from-sand-200 to-coral-200",
+    image: "/gallery/clubhouse-lounge.jpg",
+  },
+  {
+    title: "Skyline at Golden Hour",
+    tone: "from-coral-300 to-coral-500",
+    image: "/gallery/skyline-golden-hour.jpg",
+  },
 ];

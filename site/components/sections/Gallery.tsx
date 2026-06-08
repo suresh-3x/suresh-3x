@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { gallery } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -51,7 +52,21 @@ export function Gallery() {
                   i === 0 ? "md:col-span-2 md:row-span-2 md:aspect-auto" : ""
                 }`}
               >
+                {/* Interim royalty-free image sits under the dark gradient/grain/hover overlays */}
+                <Image
+                  src={g.image}
+                  alt={g.title}
+                  fill
+                  sizes={
+                    i === 0
+                      ? "(min-width: 768px) 66vw, 50vw"
+                      : "(min-width: 768px) 33vw, 50vw"
+                  }
+                  className="object-cover transition-transform duration-700 ease-luxe group-hover:scale-105"
+                  priority={i === 0}
+                />
                 <span className="grain absolute inset-0" />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ocean-950/70 via-ocean-950/10 to-transparent" />
                 <span className="absolute inset-0 bg-ocean-950/0 transition-colors duration-500 group-hover:bg-ocean-950/30" />
                 <span className="absolute bottom-4 left-4 font-display text-lg text-white/95 drop-shadow">
                   {g.title}
@@ -78,8 +93,17 @@ export function Gallery() {
             className={`relative aspect-video w-full max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br ${gallery[open].tone}`}
             onClick={(e) => e.stopPropagation()}
           >
+            <Image
+              src={gallery[open].image}
+              alt={gallery[open].title}
+              fill
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="object-cover"
+              priority
+            />
             <span className="grain absolute inset-0" />
-            <span className="absolute bottom-6 left-6 font-display text-2xl text-white">
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ocean-950/70 via-transparent to-transparent" />
+            <span className="absolute bottom-6 left-6 font-display text-2xl text-white drop-shadow">
               {gallery[open].title}
             </span>
           </div>

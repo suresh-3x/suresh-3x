@@ -32,6 +32,29 @@ Single-page scroll experience: procedural WebGL coral-reef hero, cinematic scrol
   `dpr 2` with 600 particles. Fixed: shadows **off**, `dpr` capped at **1.5**, particles
   600→320, Bloom softened (intensity 0.7→0.55, threshold 0.35→0.5). Reef still reads well
   on lighting + bloom alone. Redeployed prod, verified.
+- **Interim imagery** (2026-06-08) — the site shipped with empty `public/`; Gallery,
+  Residences and Location rendered gradient placeholder tiles. Added 10 genuinely
+  royalty-free stock photos (**Unsplash License**, commercial use, no attribution
+  required) as **interim placeholders — to be swapped for real Mayfair Housing renders
+  before go-live.** Downloaded local copies into `site/public/gallery/` (no hotlinking);
+  wired in via `next/image` (`fill`, `object-cover`, sized) sitting **under** the existing
+  dark gradient/grain/hover overlays so titles stay legible, with `tone` gradients kept as
+  the fallback color. Gallery lightbox now shows the full image; Residences cards got fitting
+  interior photos; the Location "stylized map placeholder" gradient was replaced with an
+  aerial coastline under the dark map overlay/grid/marker. Build green (9 routes), redeployed
+  prod, verified a deployed image returns `200 image/jpeg`.
+  (`site/lib/content.ts`, `site/components/sections/Gallery.tsx`, `Residences.tsx`, `Location.tsx`, `site/public/gallery/*`)
+  - **Source photo pages (Unsplash License):**
+    - Tropical Arrival Court → https://unsplash.com/photos/a-pathway-leading-to-a-tropical-resort-with-palm-trees-zv-_9KrUvdo (`arrival-court.jpg`)
+    - Infinity Pool Deck → https://unsplash.com/photos/luxury-infinity-pool-at-sunset-with-lounge-chairs-KgybDitNR18 (`infinity-pool.jpg`)
+    - Deck Residence Living → https://unsplash.com/photos/modern-living-room-with-sectional-sofa-and-large-window-yxO8YG082v8 (`deck-residence-living.jpg`)
+    - Landscaped Podium → https://unsplash.com/photos/lush-green-pathway-through-a-tropical-garden-NgJMXoPoDmg (`landscaped-podium.jpg`)
+    - Clubhouse Lounge → https://unsplash.com/photos/grand-hotel-lobby-with-ornate-columns-and-colorful-sculpture-YzWmXSlTjWg (`clubhouse-lounge.jpg`)
+    - Skyline at Golden Hour → https://unsplash.com/photos/city-skyline-near-body-of-water-during-golden-hour-4Y_f_LvAu3U (`skyline-golden-hour.jpg`)
+    - Residences 3 BHK interior → https://unsplash.com/photos/modern-apartment-interior-with-kitchen-and-living-space-xrnNNnq6djg (`apartment-interior.jpg`)
+    - Location aerial coastline → https://unsplash.com/photos/an-aerial-view-of-a-beach-and-the-ocean-6ZdM7iQab3c (`aerial-coastline.jpg`)
+    - Oceanfront architecture (spare) → https://unsplash.com/photos/infinity-pool-overlooking-the-ocean-on-a-sunny-day-ZWmyi_lbptQ (`oceanfront-architecture.jpg`)
+    - Resort pathway (spare) → https://unsplash.com/photos/palm-trees-line-a-path-leading-to-a-beach-resort-OymwZutx6FI (`resort-pathway.jpg`)
 - **Structure** — restructured into the standard folder shape (`LEAD.md` + `artifacts/` + `site/`) to match the other revamps. App moved from repo root into `site/`; `.git` stays at the folder root.
 
 ## Artifacts (`artifacts/`)

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { location } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -25,9 +26,18 @@ export function Location() {
             </Reveal>
           </div>
 
-          {/* Stylized map placeholder */}
+          {/* Stylized map placeholder — interim royalty-free aerial under a dark map overlay.
+              TODO: swap for an embedded interactive map / real site aerial before go-live. */}
           <Reveal delay={0.1}>
             <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ocean-800 to-ocean-950">
+              <Image
+                src={location.image}
+                alt="Aerial view of the coastline near Mira Road East, Mumbai"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-ocean-950/55" />
               <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:32px_32px]" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="absolute inset-0 -m-8 animate-ripple rounded-full border border-coral-400/40" />
