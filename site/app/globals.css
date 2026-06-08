@@ -8,7 +8,10 @@
 }
 
 @layer base {
-  html {
+  /* CSS smooth scrolling only when Lenis is NOT active (no-JS fallback).
+     When Lenis manages scroll it writes scrollTop every frame — CSS
+     scroll-behavior: smooth animates each write and breaks scrolling. */
+  html:not(.lenis) {
     scroll-behavior: smooth;
   }
 
