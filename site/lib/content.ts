@@ -2,8 +2,10 @@
  * Single source of truth for all site copy and project specs.
  * Edit values here rather than hardcoding strings in components.
  *
- * NOTE: Commercial/legal figures (price, carpet area, RERA no., possession date)
- * are intentionally placeholders. Confirm with Mayfair Housing before go-live.
+ * Project facts below are taken from the official landing page (codenamecoral.com)
+ * and the MahaRERA listing. The official site publishes no phone/email — leads are
+ * captured through the on-page enquiry form — so `phone`/`email` are null.
+ * Unit renders/photos are still interim stock (see image notes); swap before go-live.
  */
 
 export const site = {
@@ -13,10 +15,28 @@ export const site = {
   subtagline:
     "Mira Road's first tropical-themed luxury residences — a sanctuary of light, water and breathable architecture.",
   url: "https://codenamecoral.com",
-  // TODO: confirm official contact details before go-live
-  phone: "+91 00000 00000",
-  email: "sales@codenamecoral.com",
-  rera: "{{RERA_NO}}", // TODO: confirm MahaRERA registration number
+  priceFrom: "₹1.34 Cr*",
+  configs: "2 & 3 Bed Deck-Residences",
+  openSpaces: "50%",
+  amenities: "40+",
+  address: "MTNL Road, near Jangid Circle, Mira Road East, Mumbai 401107",
+  rera: "P51700002231",
+  reraUrl: "https://maharera.maharashtra.gov.in",
+  // Official site lists no public phone/email — enquiries flow through the form.
+  phone: null as string | null,
+  email: null as string | null,
+};
+
+/** Developer credibility (Mayfair Housing, from the official site). */
+export const developer = {
+  name: "Mayfair Housing",
+  line: "Six decades of shaping Mumbai.",
+  stats: [
+    { value: "60+", label: "Years" },
+    { value: "100+", label: "Projects" },
+    { value: "1 Cr+", label: "Sq.ft. developed" },
+    { value: "10,000+", label: "Families" },
+  ],
 };
 
 export type NavItem = { label: string; href: string };
@@ -67,8 +87,8 @@ export const residences: Residence[] = [
     description:
       "Light-filled two-bedroom homes with a signature private deck — an outdoor room that blurs the line between living space and tropical garden.",
     highlights: ["Private sun deck", "Cross-ventilated layout", "Premium fittings"],
-    carpet: "{{2BHK_CARPET}} sq.ft.", // TODO: confirm
-    price: "On request", // TODO: confirm
+    carpet: "645–689 sq.ft.",
+    price: "₹1.34 Cr* onwards",
     image: "/gallery/deck-residence-living.jpg",
     tone: "from-ocean-400 to-ocean-700",
   },
@@ -78,8 +98,8 @@ export const residences: Residence[] = [
     description:
       "Expansive three-bedroom residences designed around the deck — generous family living, framed by greenery and skyline views.",
     highlights: ["Extended deck", "Master with walk-in", "Sky-framed views"],
-    carpet: "{{3BHK_CARPET}} sq.ft.", // TODO: confirm
-    price: "On request", // TODO: confirm
+    carpet: "946–1235 sq.ft.",
+    price: "Price on request",
     image: "/gallery/apartment-interior.jpg",
     tone: "from-coral-300 to-coral-500",
   },
@@ -110,22 +130,22 @@ export const amenitiesCount = "40+";
 
 export const tower = {
   eyebrow: "The Tower",
-  title: "Thirty-five storeys of considered living.",
-  body: "A single landmark tower rising over a layered podium — engineered for light, air and privacy on a 1.75-acre canvas.",
+  title: "A single landmark, layered like a reef.",
+  body: "One tropical tower rising over a landscaped podium — half the ground given back as open space, with forty-plus amenities woven through the decks.",
   stats: [
-    { value: "35", label: "Storeys" },
-    { value: "30", label: "Habitable floors" },
-    { value: "4", label: "Podium levels" },
-    { value: "1.75", label: "Acres" },
     { value: "40+", label: "Amenities" },
-    { value: "2", label: "Basement levels" },
+    { value: "50%", label: "Open spaces" },
+    { value: "2 & 3", label: "BHK decks" },
+    { value: "645+", label: "Sq.ft. carpet" },
+    { value: "60+", label: "Yrs of legacy" },
+    { value: "100+", label: "Mayfair projects" },
   ],
   levels: [
     { name: "Sky Deck & Crown", floors: "Rooftop", note: "Rooftop sky deck and crown amenities" },
-    { name: "Habitable Floors", floors: "30 floors", note: "2 & 3 Bed Deck Residences" },
+    { name: "Deck Residences", floors: "Habitable floors", note: "2 & 3 Bed Deck Residences" },
     { name: "E-Deck", floors: "Amenity deck", note: "Elevated amenity & landscape deck" },
-    { name: "Podium", floors: "4 levels", note: "Parking, lobbies & tropical landscaping" },
-    { name: "Basements", floors: "2 levels", note: "Parking & services" },
+    { name: "Podium", floors: "Arrival levels", note: "Lobbies, parking & tropical landscaping" },
+    { name: "Basements", floors: "Below grade", note: "Parking & services" },
   ],
 };
 

@@ -7,6 +7,7 @@ import { Amenities } from "@/components/sections/Amenities";
 import { Tower } from "@/components/sections/Tower";
 import { Location } from "@/components/sections/Location";
 import { Gallery } from "@/components/sections/Gallery";
+import { DeveloperStrip } from "@/components/sections/DeveloperStrip";
 import { Enquire } from "@/components/sections/Enquire";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Tower />
         <Location />
         <Gallery />
+        <DeveloperStrip />
         <Enquire />
       </main>
       <Footer />

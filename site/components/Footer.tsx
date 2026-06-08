@@ -33,26 +33,25 @@ export function Footer() {
 
           <div>
             <p className="text-xs uppercase tracking-widest text-sand-100/40">
-              Contact
+              Get in touch
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-sand-100/70">
+            <ul className="mt-4 space-y-3 text-sm text-sand-100/70">
               <li>
-                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-coral-300">
-                  {site.phone}
+                <a
+                  href="#enquire"
+                  className="group inline-flex items-center gap-2 text-coral-300 transition-colors hover:text-coral-200"
+                >
+                  Register your interest
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </a>
               </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="hover:text-coral-300">
-                  {site.email}
-                </a>
+              <li className="text-sand-100/45">
+                {site.configs} · from {site.priceFrom}
               </li>
-              <li className="flex gap-3 pt-2">
-                <a href="#" aria-label="Instagram" className="hover:text-coral-300">
-                  Instagram
-                </a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-coral-300">
-                  LinkedIn
-                </a>
+              <li className="pt-1 text-xs uppercase tracking-wider text-sand-100/40">
+                MahaRERA {site.rera}
               </li>
             </ul>
           </div>
@@ -60,8 +59,16 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6 text-xs leading-relaxed text-sand-100/40">
           <p>
-            MahaRERA Registration No.: {site.rera}. {/* TODO: confirm */} This
-            is not an offer or contract. Images, plans and amenities are
+            MahaRERA Registration No.:{" "}
+            <a
+              href={site.reraUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 hover:text-coral-300 hover:underline"
+            >
+              {site.rera}
+            </a>
+            . This is not an offer or contract. Images, plans and amenities are
             artistic representations and indicative only, subject to approvals
             and change.
           </p>

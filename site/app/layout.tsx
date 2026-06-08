@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { site } from "@/lib/content";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { SectionNav } from "@/components/ui/SectionNav";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 import "./globals.css";
 
 const display = Fraunces({
@@ -68,6 +71,11 @@ const jsonLd = {
     addressRegion: "Maharashtra",
     addressCountry: "IN",
   },
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "MahaRERA",
+    value: site.rera,
+  },
   developer: {
     "@type": "Organization",
     name: site.developer,
@@ -92,6 +100,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <ScrollProgress />
+        <CursorGlow />
+        <SectionNav />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

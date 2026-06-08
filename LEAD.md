@@ -57,6 +57,38 @@ Single-page scroll experience: procedural WebGL coral-reef hero, cinematic scrol
     - Resort pathway (spare) → https://unsplash.com/photos/palm-trees-line-a-path-leading-to-a-beach-resort-OymwZutx6FI (`resort-pathway.jpg`)
 - **Structure** — restructured into the standard folder shape (`LEAD.md` + `artifacts/` + `site/`) to match the other revamps. App moved from repo root into `site/`; `.git` stays at the folder root.
 
+## Production + immersive pass (2026-06-08)
+
+Made the site production-ready, smoother, more interactive and immersive (GPU-conscious —
+verified ~no main-thread blocking during scroll, single canvas).
+
+**Real project data** (sourced from the official landing page codenamecoral.com + the image
+the client shared) replaced the placeholders in `site/lib/content.ts`:
+- **MahaRERA `P51700002231`** (was `{{RERA_NO}}`), linked to maharera.maharashtra.gov.in.
+- **2 BHK 645–689 sq.ft · 3 BHK 946–1235 sq.ft** carpet (real); **from ₹1.34 Cr\***;
+  **50% open spaces · 40+ amenities**; address MTNL Road, Mira Road (E).
+- **Removed the fake phone/email** (`+91 00000…`, `sales@…`) — the official site lists none;
+  leads now route through the on-page enquiry form. Footer/Enquire/Privacy updated accordingly.
+- Added a **Mayfair Housing credibility strip** (60+ yrs · 100+ projects · 1 Cr+ sq.ft · 10,000+ families).
+- Replaced the unverifiable tower numbers (35 storeys / 1.75 acres) with confirmed facts.
+- ⚠️ Unit **photos are still interim stock** — swap for real Mayfair renders before go-live.
+
+**Smooth / interactive / immersive (new `site/components/ui/`):**
+- **Scroll-driven reef camera** — the hero 3D camera ascends + dollies back as you scroll
+  (`three/CoralCanvas.tsx`, scroll-linked Rig). Connects the 3D to scrolling.
+- **ScrollProgress** top bar, **SectionNav** right-rail dots (active section via
+  `lib/use-active-section.ts` IntersectionObserver), **Nav** active-link underlines.
+- **CursorGlow** (pointer-trailing coral glow, screen-blended; off on touch/reduced-motion),
+  **MagneticButton** hero CTA, hero canvas fade-in.
+- **Enquiry form** — per-field inline validation + error/submitting/success states.
+
+**Production-ready:**
+- **Favicon** (`app/icon.svg` coral wave mark — fixes the old `/favicon.ico` 404) and a
+  generated **OG share image** (`app/opengraph-image.tsx`, 1200×630). JSON-LD now carries the RERA.
+- **WebGLBoundary** error boundary around the canvas (GPU failure can't blank the hero).
+- Build green (11 routes incl. icon + OG). Redeployed prod, verified: 200, OG `image/png`,
+  favicon `image/svg+xml`, RERA on page.
+
 ## Artifacts (`artifacts/`)
 | Path | What |
 |---|---|

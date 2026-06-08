@@ -7,21 +7,33 @@ import * as THREE from "three";
 import { Coral } from "./Coral";
 import { Particles } from "./Particles";
 
-/** Gentle camera parallax toward the pointer, with a slow idle orbit. */
-function Rig({ lowPower }: { lowPower: boolean }) {
+/**
+ * Camera rig: pointer parallax + slow idle orbit, plus a scroll-linked "rise"
+ * — as you scroll through the hero the camera ascends and dollies back, so the
+ * reef feels like it's being left below you. `scroll` is 0 at the top, 1 once
+ * the hero is a viewport-height scrolled. Only moves the camera — no extra cost.
+ */
+function Rig({
+  lowPower,
+  scroll,
+}: {
+  lowPower: boolean;
+  scroll: React.MutableRefObject<number>;
+}) {
   const { camera, pointer } = useThree();
   const target = useRef(new THREE.Vector3());
 
   useFrame((state, delta) => {
     const t = state.clock.elapsedTime;
     const orbit = lowPower ? 0 : 0.4;
+    const s = scroll.current;
     target.current.set(
       Math.sin(t * 0.1) * orbit + pointer.x * 1.2,
-      0.2 + pointer.y * 0.6,
-      4.6,
+      0.2 + pointer.y * 0.6 + s * 1.7,
+      4.6 + s * 3.4,
     );
     camera.position.lerp(target.current, 1 - Math.pow(0.001, delta));
-    camera.lookAt(0, 0.2, 0);
+    camera.lookAt(0, 0.2 + s * 0.9, 0);
   });
   return null;
 }
@@ -30,10 +42,18 @@ export function CoralCanvas({ lowPower = false }: { lowPower?: boolean }) {
   // Pause rendering when the tab is hidden or the canvas scrolls offscreen.
   const [active, setActive] = useState(true);
   const wrap = useRef<HTMLDivElement>(null);
+  // Normalised hero scroll progress (0 at top → 1 after one viewport height).
+  const scroll = useRef(0);
 
   useEffect(() => {
     const onVis = () => setActive(!document.hidden);
     document.addEventListener("visibilitychange", onVis);
+
+    const onScroll = () => {
+      scroll.current = Math.min(1, Math.max(0, window.scrollY / window.innerHeight));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     let io: IntersectionObserver | null = null;
     if (wrap.current) {
@@ -45,6 +65,7 @@ export function CoralCanvas({ lowPower = false }: { lowPower?: boolean }) {
     }
     return () => {
       document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("scroll", onScroll);
       io?.disconnect();
     };
   }, []);
@@ -73,7 +94,7 @@ export function CoralCanvas({ lowPower = false }: { lowPower?: boolean }) {
           <Particles count={lowPower ? 140 : 320} />
         </Suspense>
 
-        <Rig lowPower={lowPower} />
+        <Rig lowPower={lowPower} scroll={scroll} />
 
         {!lowPower && (
           <EffectComposer>

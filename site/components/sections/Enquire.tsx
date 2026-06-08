@@ -59,20 +59,21 @@ export function Enquire() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-8 space-y-2 text-sm text-sand-100/60">
-              <p>
-                Call:{" "}
-                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="text-coral-300">
-                  {site.phone}
-                </a>
-              </p>
-              <p>
-                Email:{" "}
-                <a href={`mailto:${site.email}`} className="text-coral-300">
-                  {site.email}
-                </a>
-              </p>
-            </div>
+            <dl className="mt-8 grid max-w-md grid-cols-2 gap-x-6 gap-y-5 text-sm">
+              {[
+                ["Configurations", site.configs],
+                ["Starting", `${site.priceFrom} onwards`],
+                ["Open spaces", site.openSpaces],
+                ["MahaRERA", site.rera],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="text-xs uppercase tracking-wider text-sand-100/45">
+                    {k}
+                  </dt>
+                  <dd className="mt-1 text-sand-50">{v}</dd>
+                </div>
+              ))}
+            </dl>
           </Reveal>
         </div>
 
@@ -107,9 +108,40 @@ export function Enquire() {
               />
 
               <div className="grid gap-5">
-                <Field label="Full name" name="name" type="text" required autoComplete="name" />
-                <Field label="Phone" name="phone" type="tel" required autoComplete="tel" />
-                <Field label="Email" name="email" type="email" required autoComplete="email" />
+                <Field
+                  label="Full name"
+                  name="name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  validate={(v) =>
+                    v.trim().length < 2 ? "Please enter your name." : ""
+                  }
+                />
+                <Field
+                  label="Phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  autoComplete="tel"
+                  validate={(v) =>
+                    /^[+\d][\d\s-]{7,14}$/.test(v.trim())
+                      ? ""
+                      : "Enter a valid phone number."
+                  }
+                />
+                <Field
+                  label="Email"
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  validate={(v) =>
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+                      ? ""
+                      : "Enter a valid email address."
+                  }
+                />
 
                 <div className="flex flex-col gap-2">
                   <label htmlFor="config" className="text-sm text-sand-100/70">
@@ -166,13 +198,19 @@ function Field({
   type,
   required,
   autoComplete,
+  validate,
 }: {
   label: string;
   name: string;
   type: string;
   required?: boolean;
   autoComplete?: string;
+  validate?: (value: string) => string;
 }) {
+  const [err, setErr] = useState("");
+  const check = (value: string) => {
+    if (validate) setErr(validate(value));
+  };
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={name} className="text-sm text-sand-100/70">
@@ -185,8 +223,22 @@ function Field({
         type={type}
         required={required}
         autoComplete={autoComplete}
-        className="rounded-xl border border-white/15 bg-ocean-950/60 px-4 py-3 text-sand-50 outline-none transition-colors placeholder:text-sand-100/30 focus:border-coral-400"
+        aria-invalid={err ? true : undefined}
+        aria-describedby={err ? `${name}-error` : undefined}
+        onBlur={(e) => check(e.target.value)}
+        onInput={(e) => {
+          // Clear the message as soon as the value becomes valid.
+          if (err) check((e.target as HTMLInputElement).value);
+        }}
+        className={`rounded-xl border bg-ocean-950/60 px-4 py-3 text-sand-50 outline-none transition-colors placeholder:text-sand-100/30 focus:border-coral-400 ${
+          err ? "border-coral-400/70" : "border-white/15"
+        }`}
       />
+      {err && (
+        <span id={`${name}-error`} className="text-xs text-coral-300">
+          {err}
+        </span>
+      )}
     </div>
   );
 }

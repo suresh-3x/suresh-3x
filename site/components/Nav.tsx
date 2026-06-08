@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/content";
+import { useActiveSection } from "@/lib/use-active-section";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const active = useActiveSection([
+    ...nav.map((n) => n.href.replace("#", "")),
+    "enquire",
+  ]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -35,16 +40,29 @@ export function Nav() {
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
-          {nav.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className="text-sm text-sand-100/80 transition-colors hover:text-coral-300"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {nav.map((item) => {
+            const on = active === item.href.replace("#", "");
+            return (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  aria-current={on ? "true" : undefined}
+                  className={`group relative text-sm transition-colors ${
+                    on
+                      ? "text-coral-300"
+                      : "text-sand-100/80 hover:text-coral-300"
+                  }`}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-1.5 left-0 h-px bg-coral-300 transition-all duration-300 ease-luxe ${
+                      on ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex items-center gap-3">

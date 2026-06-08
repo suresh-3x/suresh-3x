@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useCapabilities } from "@/lib/use-capabilities";
 import { site } from "@/lib/content";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { WebGLBoundary } from "@/components/ui/WebGLBoundary";
 
 // 3D is code-split and never server-rendered; the poster shows until/unless it loads.
 const CoralCanvas = dynamic(
@@ -23,7 +25,18 @@ export function Hero() {
       {/* Poster fallback — always present beneath the canvas */}
       <PosterBackdrop />
 
-      {show3D && <CoralCanvas lowPower={caps.lowPower} />}
+      {show3D && (
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
+        >
+          <WebGLBoundary>
+            <CoralCanvas lowPower={caps.lowPower} />
+          </WebGLBoundary>
+        </motion.div>
+      )}
 
       {/* Readability gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-950/40 via-transparent to-ocean-950" />
@@ -62,15 +75,15 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-col gap-3 sm:flex-row"
         >
-          <a
+          <MagneticButton
             href="#enquire"
-            className="rounded-full bg-coral-400 px-8 py-3.5 text-sm font-semibold text-ocean-950 transition-transform duration-300 ease-luxe hover:scale-[1.03] hover:bg-coral-300"
+            className="rounded-full bg-coral-400 px-8 py-3.5 text-sm font-semibold text-ocean-950 transition-colors duration-300 hover:bg-coral-300"
           >
             Book a Site Visit
-          </a>
+          </MagneticButton>
           <a
             href="#residences"
-            className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-sand-50 transition-colors duration-300 hover:bg-white/10"
+            className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-sand-50 transition-colors duration-300 hover:border-coral-300/60 hover:bg-white/10"
           >
             Explore Residences
           </a>

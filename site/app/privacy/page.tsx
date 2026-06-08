@@ -28,11 +28,11 @@ export default function PrivacyPage() {
           We do not sell your data.
         </p>
         <p>
-          To request access to or deletion of your data, contact{" "}
-          <a href={`mailto:${site.email}`} className="text-coral-300">
-            {site.email}
-          </a>
-          .
+          To request access to or deletion of your data, reach us through the{" "}
+          <a href="/#enquire" className="text-coral-300">
+            enquiry form
+          </a>{" "}
+          on this site and our team will respond.
         </p>
         <p className="text-sm text-sand-100/40">
           Last updated: {new Date().toLocaleDateString("en-IN")}.
