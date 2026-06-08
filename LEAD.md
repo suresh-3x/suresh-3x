@@ -8,7 +8,7 @@
 | **New site (deployed)** | **https://codename-coral.vercel.app** (Vercel project `codename-coral`) |
 | **Git** | GitHub `suresh-3x/suresh-3x`, branch `claude/codenamecoral-revamp-JoPbn` — repo root is this folder; app lives in `site/` |
 | **Archived on** | 2026-06-07 |
-| **Stack** | Next.js 14 (App Router) · TypeScript (strict) · Tailwind CSS (coral/ocean/sand theme) · three.js + @react-three/fiber + drei + postprocessing (Bloom) · Framer Motion (reveals) · Lenis (smooth scroll) · Zod (form validation) · Fraunces + Inter via `next/font` |
+| **Stack** | Next.js 14 (App Router) · TypeScript (strict) · Tailwind CSS (coral/ocean/sand theme) · **three.js 0.184 WebGPU** (`WebGPURenderer` + **TSL** node materials + `RenderPipeline` post, WebGL2 auto-fallback) · Framer Motion (reveals) · Lenis (smooth scroll) · Zod (form validation) · Fraunces + Inter via `next/font` |
 
 > **This is the reference site** for the three.js design bar applied across the other folders. See the root `CLAUDE.md`.
 
@@ -96,6 +96,26 @@ the client shared) replaced the placeholders in `site/lib/content.ts`:
 - **WebGLBoundary** error boundary around the canvas (GPU failure can't blank the hero).
 - Build green (11 routes incl. icon + OG). Redeployed prod, verified: 200, OG `image/png`,
   favicon `image/svg+xml`, RERA on page.
+
+## WebGPU / TSL upgrade (2026-06-08)
+
+Rebuilt the hero 3D on the modern **WebGPU** pipeline (style ref:
+planpoint-webgpu.vercel.app), using Dan Greenheck's `webgpu-threejs-tsl` skill docs as
+reference (read directly, not installed as a Claude skill).
+- **Renderer:** replaced React-Three-Fiber + WebGL with a vanilla **`WebGPURenderer`**
+  (`three/webgpu`) in `site/components/three/CoralWebGPU.tsx`. Auto-falls back to **WebGL2**
+  where WebGPU is unavailable (Safari/older), so it's safe for every visitor. Verified: prod
+  runs the **WebGPU backend**.
+- **Materials:** coral reef is now **TSL node materials** (`MeshStandardNodeMaterial`) with a
+  fresnel rim-glow, emissive polyp tips, and a `PointsNodeMaterial` particle field.
+- **Cinematic post (TSL `RenderPipeline`):** depth-of-field **bokeh** (`dof`, focus tracks the
+  camera) + **bloom** + **AgX tone mapping** + vignette — the filmic look from the reference.
+- **Kept:** scroll-linked camera rise + pointer parallax, offscreen/tab-hidden pause, dpr
+  clamp, `prefers-reduced-motion` fallback (poster), WebGL error boundary.
+- **Deps:** removed `@react-three/fiber` / `@react-three/drei` / `@react-three/postprocessing` /
+  `postprocessing`; bumped `three` → **0.184**. (The stray `postprocessing` package peers
+  `three <0.171` and broke Vercel's clean `npm ci` — removing it fixed the deploy.)
+- **Perf:** 114 FPS, single canvas, smooth Lenis scroll, clean console. Build green (11 routes).
 
 ## Artifacts (`artifacts/`)
 | Path | What |

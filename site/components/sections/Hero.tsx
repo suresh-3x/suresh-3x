@@ -7,9 +7,10 @@ import { site } from "@/lib/content";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { WebGLBoundary } from "@/components/ui/WebGLBoundary";
 
-// 3D is code-split and never server-rendered; the poster shows until/unless it loads.
+// WebGPU 3D is code-split and never server-rendered; the poster shows until/unless
+// it loads. WebGPURenderer auto-falls back to WebGL2 where WebGPU is unavailable.
 const CoralCanvas = dynamic(
-  () => import("@/components/three/CoralCanvas").then((m) => m.CoralCanvas),
+  () => import("@/components/three/CoralWebGPU").then((m) => m.CoralWebGPU),
   { ssr: false },
 );
 
