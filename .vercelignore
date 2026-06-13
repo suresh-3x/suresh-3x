@@ -1,0 +1,7 @@
+# Deploy is from the repo root with project Root Directory = "site".
+# Exclude everything not needed to build site/ (Vercel reinstalls deps + rebuilds).
+node_modules
+.next
+artifacts
+.playwright-mcp
+*.log
