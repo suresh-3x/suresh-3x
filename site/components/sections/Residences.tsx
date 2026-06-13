@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { residences } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function Residences() {
   return (
@@ -10,9 +11,7 @@ export function Residences() {
     >
       <div className="container-page">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-            The Residences
-          </p>
+          <Eyebrow>The Residences</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-6 max-w-2xl text-balance text-4xl leading-tight text-sand-50 md:text-6xl">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { amenities, amenitiesCount, type Amenity } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const categories = ["All", "Wellness", "Leisure", "Social", "Outdoor"] as const;
 type Filter = (typeof categories)[number];
@@ -19,9 +20,7 @@ export function Amenities() {
     <section id="amenities" className="relative bg-ocean-900 py-28 md:py-40">
       <div className="container-page">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-            Amenities
-          </p>
+          <Eyebrow>Amenities</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-6 max-w-2xl text-balance text-4xl leading-tight text-sand-50 md:text-6xl">

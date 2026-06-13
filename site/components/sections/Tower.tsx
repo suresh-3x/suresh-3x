@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { tower } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { CountUp } from "@/components/ui/CountUp";
 
 export function Tower() {
   const [active, setActive] = useState(0);
@@ -14,9 +16,7 @@ export function Tower() {
     >
       <div className="container-page">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-            {tower.eyebrow}
-          </p>
+          <Eyebrow>{tower.eyebrow}</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-6 max-w-2xl text-balance text-4xl leading-tight text-sand-50 md:text-6xl">
@@ -77,10 +77,11 @@ export function Tower() {
             <div className="mt-6 grid grid-cols-3 gap-3">
               {tower.stats.map((s, i) => (
                 <Reveal key={s.label} delay={i * 0.05}>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-                    <p className="font-display text-3xl text-coral-300">
-                      {s.value}
-                    </p>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center transition-all duration-500 ease-luxe hover:-translate-y-1 hover:border-coral-400/40">
+                    <CountUp
+                      value={s.value}
+                      className="font-display text-3xl text-coral-300"
+                    />
                     <p className="mt-1 text-xs uppercase tracking-wide text-sand-100/60">
                       {s.label}
                     </p>

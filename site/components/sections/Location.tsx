@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { location } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function Location() {
   return (
@@ -9,9 +10,7 @@ export function Location() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Reveal>
-              <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-                {location.eyebrow}
-              </p>
+              <Eyebrow>{location.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-6 text-balance text-4xl leading-tight text-sand-50 md:text-6xl">
@@ -54,7 +53,7 @@ export function Location() {
         <div className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {location.connectivity.map((c, i) => (
             <Reveal key={c.name} delay={Math.min(i * 0.05, 0.3)}>
-              <div className="flex h-full items-start justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex h-full items-start justify-between rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-500 ease-luxe hover:-translate-y-1 hover:border-coral-400/40">
                 <div>
                   <p className="font-display text-lg text-sand-50">{c.name}</p>
                   <p className="mt-1 text-sm text-sand-100/60">{c.detail}</p>

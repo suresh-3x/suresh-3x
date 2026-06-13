@@ -1,14 +1,13 @@
 import { story } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function Story() {
   return (
     <section id="story" className="relative bg-ocean-950 py-28 md:py-40">
       <div className="container-page">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-            {story.eyebrow}
-          </p>
+          <Eyebrow>{story.eyebrow}</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-6 max-w-3xl text-balance text-4xl leading-tight text-sand-50 md:text-6xl">

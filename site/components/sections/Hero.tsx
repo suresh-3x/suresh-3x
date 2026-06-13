@@ -92,11 +92,19 @@ export function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+      <motion.div
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+      >
+        <span className="text-[0.65rem] uppercase tracking-[0.3em] text-sand-100/50">
+          Scroll
+        </span>
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/25 p-1.5">
           <span className="h-2 w-1 animate-float rounded-full bg-coral-300" />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

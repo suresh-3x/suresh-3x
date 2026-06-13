@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { gallery } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function Gallery() {
   const [open, setOpen] = useState<number | null>(null);
@@ -32,9 +33,7 @@ export function Gallery() {
     >
       <div className="container-page">
         <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-coral-300">
-            Gallery
-          </p>
+          <Eyebrow>Gallery</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-6 max-w-2xl text-balance text-4xl leading-tight text-sand-50 md:text-6xl">
